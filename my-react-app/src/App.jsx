@@ -1,13 +1,20 @@
 import React from 'react';
-import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import SignOut from './pages/SignOut';
+import About from './pages/About';
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-red-500'>APP of react</h1>
-      <p>This is a basic React app using Vite or Create React App.</p>
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='sign-in' element={<SignIn />} />
+        <Route path='sign-out' element={<SignOut />} />
+        <Route path='about' element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
